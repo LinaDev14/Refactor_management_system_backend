@@ -12,8 +12,6 @@ import java.util.List;
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 
-    // save employees
-    List<EmployeeDTO> fillData(List<EmployeeDTO> employeeDTO);
     // find employees by first name
     List<EmployeeDTO> findAllByFirstNameContainingIgnoreCaseOrderByFirstName(String firstName);
     // find employees by last name
