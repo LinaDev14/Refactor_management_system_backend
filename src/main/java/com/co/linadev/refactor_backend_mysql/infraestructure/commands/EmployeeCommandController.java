@@ -28,6 +28,13 @@ public class EmployeeCommandController {
         return new ResponseEntity<>(employeeService.saveEmployee(employeeDTO), HttpStatus.CREATED);
     }
 
+    // update employee
+    @PutMapping("/updateEmployee")
+    public ResponseEntity<EmployeeDTO> updateEmployee(@RequestBody EmployeeDTO employeeDTO ){
+        return new ResponseEntity<>(employeeService.updateEmployee(employeeDTO), HttpStatus.ACCEPTED);
+    }
+
+
     // Delete Employee
     // localhost:8080/api/command/deleteEmployee?id=id
     @DeleteMapping("/deleteEmployee")
