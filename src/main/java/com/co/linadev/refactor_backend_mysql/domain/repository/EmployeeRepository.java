@@ -11,6 +11,8 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
     // find employees by first name
     List<EmployeeDTO> findAllByFirstNameContainingIgnoreCaseOrderByFirstName(String firstName);
     // find employees by last name
+    List<EmployeeDTO> findAllByLastNameContainingIgnoreCaseOrderByLastName(String lastName);
+
 
     // find employees by country
 

@@ -16,6 +16,7 @@ public interface EmployeeServiceInterface {
     List<EmployeeDTO> findAllByFirstNameContainingIgnoreCaseOrderByFirstName(String firstName);
 
     // find employees by last name
+    List<EmployeeDTO> findAllByLastNameContainingIgnoreCaseOrderByLastName(String lastName);
 
     // find employees by country
 
