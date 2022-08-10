@@ -3,6 +3,7 @@ import com.co.linadev.refactor_backend_mysql.application.mapper.EmployeeMapper;
 import com.co.linadev.refactor_backend_mysql.domain.dto.EmployeeDTO;
 import com.co.linadev.refactor_backend_mysql.domain.entity.Employee;
 import com.co.linadev.refactor_backend_mysql.domain.repository.EmployeeRepository;
+import com.co.linadev.refactor_backend_mysql.domain.utils.MessageResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -55,7 +56,11 @@ public class EmployeeService implements EmployeeServiceInterface{
     @Override
     public EmployeeDTO updateEmployee(EmployeeDTO employeeDTO) {
 
-        return null;
+        if(employeeRepository.findById(employeeDTO.getId()).isEmpty()){
+            throw new IllegalArgumentException(MessageResponse.EMPLOYEE_NOT_FOUND);
+        }
+        return employeeMapper.mapToEmployeeDTO().apply(employeeRepository.save(employeeMapper.mapToEmployeeEntity().apply(employeeDTO)));
+
     }
 
     @Override
