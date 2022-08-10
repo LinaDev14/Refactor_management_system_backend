@@ -31,9 +31,6 @@ public interface EmployeeServiceInterface {
     // save a new employee
     EmployeeDTO saveEmployee(EmployeeDTO employeeDTO);
 
-    // save employees
-    List<EmployeeDTO> fillData(List<EmployeeDTO> employeeDTO);
-
     // delete employee by id
     void deleteEmployee(Long id);
 
