@@ -26,13 +26,10 @@ public interface EmployeeServiceInterface {
     // find employees by gender
     List<EmployeeDTO> findAllByGender(Gender gender);
 
-    // find employees by name and country
-
-    // find employees by countries and gender
-
     // update employee
-
+    EmployeeDTO updateEmployee(EmployeeDTO employeeDTO);
     // save a new employee
+    EmployeeDTO saveEmployee(EmployeeDTO employeeDTO);
 
     // save employees
     List<EmployeeDTO> fillData(List<EmployeeDTO> employeeDTO);
