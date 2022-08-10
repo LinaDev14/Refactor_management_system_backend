@@ -13,6 +13,7 @@ public class EmployeeMapper {
 
         return employee -> new EmployeeDTO(
                 employee.getId(),
+                employee.getEmployeeId(),
                 employee.getFirstName(),
                 employee.getLastName(),
                 employee.getEmail(),
@@ -29,6 +30,7 @@ public class EmployeeMapper {
 
         return employeeDTO -> new Employee(
             employeeDTO.getId(),
+            employeeDTO.getEmployeeId(),
             employeeDTO.getFirstName(),
             employeeDTO.getLastName(),
             employeeDTO.getEmail(),
