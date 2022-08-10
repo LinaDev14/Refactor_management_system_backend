@@ -29,7 +29,8 @@ public class EmployeeService implements EmployeeServiceInterface{
     @Override
     public Optional<EmployeeDTO> findById(Long id) {
 
-        return Optional.empty();
+        return employeeRepository.findById(id)
+                .map(employeeMapper.mapToEmployeeDTO());
     }
 
     @Override

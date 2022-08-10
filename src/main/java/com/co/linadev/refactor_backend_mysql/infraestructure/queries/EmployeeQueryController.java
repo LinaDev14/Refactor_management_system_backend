@@ -27,6 +27,7 @@ public class EmployeeQueryController {
      * */
 
     // list employees
+    // localhost:8080/api/query/listEmployees
     @GetMapping("/listEmployees")
     public ResponseEntity<List<EmployeeDTO>> listEmployee(){
         return new ResponseEntity<>(employeeService.listEmployee(), HttpStatus.OK);
