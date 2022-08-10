@@ -11,9 +11,11 @@ public interface EmployeeServiceInterface {
 
     // get employees by id
     Optional<EmployeeDTO> findById(Long id);
-    // find employees by name
 
-    // find employees by first name
+    // find employees by firstname
+    List<EmployeeDTO> findAllByFirstNameContainingIgnoreCaseOrderByFirstName(String firstName);
+
+    // find employees by last name
 
     // find employees by country
 
