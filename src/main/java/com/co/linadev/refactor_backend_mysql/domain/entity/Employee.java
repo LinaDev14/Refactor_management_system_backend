@@ -8,6 +8,8 @@ import javax.persistence.*;
 
 @Entity
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name="employees")
 public class Employee {
 
@@ -20,4 +22,6 @@ public class Employee {
     private String phoneNumber;
     private Gender gender;
     private Country country;
+
+
 }
