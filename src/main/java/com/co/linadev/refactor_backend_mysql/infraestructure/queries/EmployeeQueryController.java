@@ -2,6 +2,7 @@ package com.co.linadev.refactor_backend_mysql.infraestructure.queries;
 
 import com.co.linadev.refactor_backend_mysql.application.service.EmployeeService;
 import com.co.linadev.refactor_backend_mysql.domain.dto.EmployeeDTO;
+import com.co.linadev.refactor_backend_mysql.domain.entity.Employee;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -39,5 +40,10 @@ public class EmployeeQueryController {
     @GetMapping("/findEmployeeById")
     public ResponseEntity<Optional<EmployeeDTO>> findById(@RequestParam Long id){
         return new ResponseEntity<>(employeeService.findById(id), HttpStatus.OK);
+    }
+
+    @GetMapping("/findByFirstName")
+    public ResponseEntity<List<Employee>>findAllByFirstNameContainingIgnoreCaseOrderByFirstName(@RequestParam(name="first") String firstName){
+        return new ResponseEntity<>(employeeService.findAllByFirstNameContainingIgnoreCaseOrderByFirstName(firstName), HttpStatus.OK);
     }
 }

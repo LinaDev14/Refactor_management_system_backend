@@ -15,10 +15,10 @@ public interface EmployeeServiceInterface {
     Optional<EmployeeDTO> findById(Long id);
 
     // find employees by firstname
-    List<EmployeeDTO> findAllByFirstNameContainingIgnoreCaseOrderByFirstName(String firstName);
+    List<Employee> findAllByFirstNameContainingIgnoreCaseOrderByFirstName(String firstName);
 
     // find employees by last name
-    List<EmployeeDTO> findAllByLastNameContainingIgnoreCaseOrderByLastName(String lastName);
+    List<Employee> findAllByLastNameContainingIgnoreCaseOrderByLastName(String lastName);
 
     // update employee
     EmployeeDTO updateEmployee(EmployeeDTO employeeDTO);

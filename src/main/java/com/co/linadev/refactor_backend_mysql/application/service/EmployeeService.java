@@ -1,6 +1,7 @@
 package com.co.linadev.refactor_backend_mysql.application.service;
 import com.co.linadev.refactor_backend_mysql.application.mapper.EmployeeMapper;
 import com.co.linadev.refactor_backend_mysql.domain.dto.EmployeeDTO;
+import com.co.linadev.refactor_backend_mysql.domain.entity.Employee;
 import com.co.linadev.refactor_backend_mysql.domain.repository.EmployeeRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -34,15 +35,21 @@ public class EmployeeService implements EmployeeServiceInterface{
     }
 
     @Override
-    public List<EmployeeDTO> findAllByFirstNameContainingIgnoreCaseOrderByFirstName(String firstName) {
+    public List<Employee> findAllByFirstNameContainingIgnoreCaseOrderByFirstName(String firstName) {
 
-        return null;
+        return employeeRepository.findAllByFirstNameContainingIgnoreCaseOrderByFirstName(firstName)
+                .stream()
+                .map(employeeMapper.mapToEmployeeEntity())
+                .collect(Collectors.toList());
     }
 
     @Override
-    public List<EmployeeDTO> findAllByLastNameContainingIgnoreCaseOrderByLastName(String lastName) {
+    public List<Employee> findAllByLastNameContainingIgnoreCaseOrderByLastName(String lastName) {
 
-        return null;
+        return employeeRepository.findAllByLastNameContainingIgnoreCaseOrderByLastName(lastName)
+                .stream()
+                .map(employeeMapper.mapToEmployeeEntity())
+                .collect(Collectors.toList());
     }
 
     @Override
