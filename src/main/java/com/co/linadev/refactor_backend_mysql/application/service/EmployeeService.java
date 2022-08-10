@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+
 @Service
 @RequiredArgsConstructor
 public class EmployeeService implements EmployeeServiceInterface{
@@ -19,7 +20,10 @@ public class EmployeeService implements EmployeeServiceInterface{
     @Override
     public List<EmployeeDTO> listEmployee() {
 
-        return null;
+        return employeeRepository.findAll()
+                .stream()
+                .map(employeeMapper.mapToEmployeeDTO())
+                .collect(Collectors.toList());
     }
 
     @Override
