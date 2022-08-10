@@ -49,7 +49,7 @@ public class EmployeeQueryController {
 
     @GetMapping("/findByLastName")
     public ResponseEntity<List<Employee>>findAllByLastNameContainingIgnoreCaseOrderByLastName(@RequestParam(name="last") String lastName){
-        return new ResponseEntity<>(employeeService.findAllByFirstNameContainingIgnoreCaseOrderByFirstName(lastName), HttpStatus.OK);
+        return new ResponseEntity<>(employeeService.findAllByLastNameContainingIgnoreCaseOrderByLastName(lastName), HttpStatus.OK);
     }
 
 
