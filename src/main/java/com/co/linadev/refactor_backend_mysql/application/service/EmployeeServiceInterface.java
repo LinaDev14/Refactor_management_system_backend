@@ -1,5 +1,7 @@
 package com.co.linadev.refactor_backend_mysql.application.service;
 import com.co.linadev.refactor_backend_mysql.domain.dto.EmployeeDTO;
+import com.co.linadev.refactor_backend_mysql.domain.valueobject.Country;
+import com.co.linadev.refactor_backend_mysql.domain.valueobject.Gender;
 
 import java.util.List;
 import java.util.Optional;
@@ -19,8 +21,10 @@ public interface EmployeeServiceInterface {
     List<EmployeeDTO> findAllByLastNameContainingIgnoreCaseOrderByLastName(String lastName);
 
     // find employees by country
+    List<EmployeeDTO> findAllByCountryOrderByCountry(Country country);
 
     // find employees by gender
+    List<EmployeeDTO> findAllByGender(Gender gender);
 
     // find employees by name and country
 
