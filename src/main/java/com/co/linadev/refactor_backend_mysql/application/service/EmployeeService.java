@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -62,7 +63,10 @@ public class EmployeeService implements EmployeeServiceInterface{
     @Override
     public EmployeeDTO saveEmployee(EmployeeDTO employeeDTO) {
 
-        return null;
+        return employeeMapper.mapToEmployeeDTO()
+                .apply(employeeRepository.save(employeeMapper.mapToEmployeeEntity()
+                        .apply(employeeDTO)
+                ));
     }
 
     @Override
