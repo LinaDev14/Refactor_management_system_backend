@@ -1,5 +1,6 @@
 package com.co.linadev.refactor_backend_mysql.application.service;
 import com.co.linadev.refactor_backend_mysql.domain.dto.EmployeeDTO;
+import com.co.linadev.refactor_backend_mysql.domain.entity.Employee;
 
 
 import java.util.List;
@@ -24,7 +25,6 @@ public interface EmployeeServiceInterface {
     // save a new employee
     EmployeeDTO saveEmployee(EmployeeDTO employeeDTO);
 
-    List<EmployeeDTO> fillData(List<EmployeeDTO> employeeDTO);
     // delete employee by id
     void deleteEmployee(Long id);
 
