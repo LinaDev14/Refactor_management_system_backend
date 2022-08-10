@@ -1,7 +1,6 @@
 package com.co.linadev.refactor_backend_mysql.domain.dto;
 
-import com.co.linadev.refactor_backend_mysql.domain.valueobject.Country;
-import com.co.linadev.refactor_backend_mysql.domain.valueobject.Gender;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,6 +16,5 @@ public class EmployeeDTO {
     private String lastName;
     private String email;
     private String phoneNumber;
-    private Gender gender;
-    private Country country;
+
 }
