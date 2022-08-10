@@ -29,6 +29,7 @@ public class EmployeeCommandController {
     }
 
     // Delete Employee
+    // localhost:8080/api/command/deleteEmployee?id=id
     @DeleteMapping("/deleteEmployee")
     public ResponseEntity<HttpStatus> deleteEmployee(@RequestParam Long id){
         employeeService.deleteEmployee(id);
@@ -36,4 +37,9 @@ public class EmployeeCommandController {
     }
 
     // Delete All
+    @DeleteMapping("/deleteAll")
+    public ResponseEntity<HttpStatus> deleteAllEmployees(){
+        employeeService.deleteAllEmployees();
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }
