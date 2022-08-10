@@ -21,7 +21,4 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
     // find employees by gender
     List<EmployeeDTO> findAllByGender(Gender gender);
 
-    // find employees by name and country
-
-    // find employees by countries and gender
 }

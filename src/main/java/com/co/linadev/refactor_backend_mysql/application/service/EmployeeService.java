@@ -1,12 +1,22 @@
 package com.co.linadev.refactor_backend_mysql.application.service;
+import com.co.linadev.refactor_backend_mysql.application.mapper.EmployeeMapper;
 import com.co.linadev.refactor_backend_mysql.domain.dto.EmployeeDTO;
+import com.co.linadev.refactor_backend_mysql.domain.repository.EmployeeRepository;
 import com.co.linadev.refactor_backend_mysql.domain.valueobject.Country;
 import com.co.linadev.refactor_backend_mysql.domain.valueobject.Gender;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
+@RequiredArgsConstructor
 public class EmployeeService implements EmployeeServiceInterface{
+
+    private final EmployeeRepository employeeRepository;
+    private final EmployeeMapper employeeMapper;
+    
     @Override
     public List<EmployeeDTO> listEmployee() {
 
@@ -14,7 +24,7 @@ public class EmployeeService implements EmployeeServiceInterface{
     }
 
     @Override
-    public Optional<EmployeeDTO> findById(Long id) {
+    public Optional<EmployeeDTO> findById(String id) {
 
         return Optional.empty();
     }
@@ -62,7 +72,7 @@ public class EmployeeService implements EmployeeServiceInterface{
     }
 
     @Override
-    public void deleteEmployee(Long id) {
+    public void deleteEmployee(String id) {
 
     }
 
