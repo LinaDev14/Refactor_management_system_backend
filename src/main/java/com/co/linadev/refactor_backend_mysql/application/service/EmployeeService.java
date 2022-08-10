@@ -16,7 +16,7 @@ public class EmployeeService implements EmployeeServiceInterface{
 
     private final EmployeeRepository employeeRepository;
     private final EmployeeMapper employeeMapper;
-    
+
     @Override
     public List<EmployeeDTO> listEmployee() {
 
@@ -24,7 +24,7 @@ public class EmployeeService implements EmployeeServiceInterface{
     }
 
     @Override
-    public Optional<EmployeeDTO> findById(String id) {
+    public Optional<EmployeeDTO> findById(Long id) {
 
         return Optional.empty();
     }
@@ -72,13 +72,14 @@ public class EmployeeService implements EmployeeServiceInterface{
     }
 
     @Override
-    public void deleteEmployee(String id) {
+    public void deleteEmployee(Long id) {
+        employeeRepository.deleteById(id);
 
     }
 
     @Override
     public void deleteAllEmployees() {
-
+        employeeRepository.deleteAll();
     }
 
 }

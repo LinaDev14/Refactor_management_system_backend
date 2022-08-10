@@ -12,7 +12,7 @@ public interface EmployeeServiceInterface {
     List<EmployeeDTO> listEmployee();
 
     // get employees by id
-    Optional<EmployeeDTO> findById(String id);
+    Optional<EmployeeDTO> findById(Long id);
 
     // find employees by firstname
     List<EmployeeDTO> findAllByFirstNameContainingIgnoreCaseOrderByFirstName(String firstName);
@@ -35,7 +35,7 @@ public interface EmployeeServiceInterface {
     List<EmployeeDTO> fillData(List<EmployeeDTO> employeeDTO);
 
     // delete employee by id
-    void deleteEmployee(String id);
+    void deleteEmployee(Long id);
 
     // delete all employees
     void deleteAllEmployees();
